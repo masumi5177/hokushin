@@ -15,12 +15,19 @@ class CreatePeopleTable extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->increments('id');
-            //故人の名前
+            //故人のデータ
             $table->string('firstName');
             $table->string('secondName');
-            //施主の名前
+            $table->integer('age');
+            $table->dateTime('deadDate');
+            
+            //施主のデータ
             $table->string('ownerFirstName');
             $table->string('ownerSecondName');
+            $table->string('ownerAddress');
+            $table->string('ownerTel');
+            $table->dateTime('ceremonyDate');
+            
             $table->timestamps();
         });
     }
